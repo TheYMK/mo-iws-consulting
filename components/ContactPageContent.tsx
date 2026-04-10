@@ -44,7 +44,7 @@ export default function ContactPageContent() {
                     { icon: Phone, title: 'Téléphone', val: SITE.phone, href: `tel:${SITE.phone}`, color: 'bg-blue-100 text-blue-700' },
                     { icon: Mail, title: 'Email', val: SITE.email, href: `mailto:${SITE.email}`, color: 'bg-green-100 text-green-700' },
                     { icon: MapPin, title: 'Localisation', val: SITE.location, href: null, color: 'bg-orange-100 text-orange-700' },
-                    { icon: Clock, title: 'Disponibilité', val: 'Lun–Ven: 8h–18h • Urgences 7j/7', href: null, color: 'bg-purple-100 text-purple-700' },
+                    { icon: Clock, title: 'Disponibilité', val: '09:00–17:00 • Urgences 7j/7', href: null, color: 'bg-purple-100 text-purple-700' },
                   ].map(({ icon: Icon, title, val, href, color }) => (
                     <div key={title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel-200 shadow-sm">
                       <div className={`w-11 h-11 ${color} rounded-xl flex items-center justify-center flex-shrink-0`}>
