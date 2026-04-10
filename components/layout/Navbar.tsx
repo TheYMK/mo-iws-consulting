@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Flame } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SITE } from '@/lib/siteData';
 
@@ -55,12 +55,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-5 h-16">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 bg-fire-500 rounded-xl flex items-center justify-center shadow-lg shadow-fire-500/40">
-              <Flame className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-display text-white font-bold text-sm leading-none tracking-tight">
-              {SITE.expertName}
-            </span>
+            <img src="/logo.png" alt={SITE.expertName} className="h-20 -my-5 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1 bg-white/5 rounded-xl p-1 border border-white/10">

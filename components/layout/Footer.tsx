@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Flame, MapPin, Phone, Mail, Linkedin, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Linkedin, ArrowRight } from 'lucide-react';
 import { SITE, SERVICES } from '@/lib/siteData';
 
 export default function Footer() {
@@ -28,13 +28,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 bg-fire-500 rounded-xl flex items-center justify-center">
-                <Flame className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <p className="font-display text-xl font-bold">{SITE.expertName}</p>
-                <p className="text-xs text-white/40 uppercase tracking-widest">{SITE.title}</p>
-              </div>
+              <img src="/logo.png" alt={SITE.expertName} className="h-28 w-auto" />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed">
               {SITE.experience}+ ans d&apos;expertise en soudage industriel. Qualite, conformite et performance pour l&apos;industrie.
