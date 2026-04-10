@@ -1,0 +1,1942 @@
+package.json:
+
+{
+  "name": "base44-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --quiet",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc -p ./jsconfig.json",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@base44/sdk": "^0.8.24",
+    "@base44/vite-plugin": "^1.0.6",
+    "@hello-pangea/dnd": "^17.0.0",
+    "@hookform/resolvers": "^4.1.2",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-aspect-ratio": "^1.1.2",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-collapsible": "^1.1.3",
+    "@radix-ui/react-context-menu": "^2.2.6",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-hover-card": "^1.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-menubar": "^1.1.6",
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.2",
+    "@radix-ui/react-toggle": "^1.1.2",
+    "@radix-ui/react-toggle-group": "^1.1.2",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@stripe/react-stripe-js": "^3.0.0",
+    "@stripe/stripe-js": "^5.2.0",
+    "@tanstack/react-query": "^5.84.1",
+    "canvas-confetti": "^1.9.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.0",
+    "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.5.2",
+    "framer-motion": "^11.16.4",
+    "html2canvas": "^1.4.1",
+    "input-otp": "^1.4.2",
+    "jspdf": "^4.0.0",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.475.0",
+    "moment": "^2.30.1",
+    "next-themes": "^0.4.4",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.54.2",
+    "react-hot-toast": "^2.6.0",
+    "react-leaflet": "^4.2.1",
+    "react-markdown": "^9.0.1",
+    "react-quill": "^2.0.0",
+    "react-resizable-panels": "^2.1.7",
+    "react-router-dom": "^6.26.0",
+    "recharts": "^2.15.4",
+    "sonner": "^2.0.1",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.171.0",
+    "vaul": "^1.1.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/node": "^22.13.5",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "baseline-browser-mapping": "^2.8.32",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "globals": "^15.14.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vite": "^6.1.0"
+  }
+}
+
+
+index.css:
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 218 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 218 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 30% 12%;
+    --primary: 218 55% 18%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 215 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 26 95% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 26 95% 52%;
+    --radius: 0.75rem;
+    --chart-1: 26 95% 52%;
+    --chart-2: 218 55% 18%;
+    --chart-3: 215 16% 47%;
+    --chart-4: 26 80% 65%;
+    --chart-5: 218 40% 35%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Syne', system-ui, sans-serif; }
+  .font-sans { font-family: 'DM Sans', system-ui, sans-serif; }
+  .text-gradient-fire {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fde68a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 20% 25%, hsla(218, 55%, 18%, 0.85) 0px, transparent 50%),
+      radial-gradient(at 80% 5%, hsla(26, 95%, 25%, 0.5) 0px, transparent 40%),
+      radial-gradient(at 5% 80%, hsla(218, 55%, 10%, 0.9) 0px, transparent 40%),
+      radial-gradient(at 80% 85%, hsla(218, 55%, 15%, 0.8) 0px, transparent 30%);
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+tailwind.config.js:
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Syne', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        navy: {
+          950: '#050d1a',
+          900: '#0a1628',
+          800: '#0f2040',
+          700: '#163058',
+          600: '#1e4080',
+          500: '#2a5298',
+        },
+        steel: {
+          100: '#f0f2f5',
+          200: '#dde3eb',
+          300: '#bcc7d6',
+          400: '#8fa0b8',
+          500: '#637895',
+          600: '#4a5e7a',
+          700: '#364560',
+          800: '#253048',
+          900: '#162034',
+        },
+        fire: {
+          300: '#fde68a',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea6a0a',
+          700: '#c45508',
+        },
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          1: 'hsl(var(--chart-1))',
+          2: 'hsl(var(--chart-2))',
+          3: 'hsl(var(--chart-3))',
+          4: 'hsl(var(--chart-4))',
+          5: 'hsl(var(--chart-5))',
+        },
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))',
+          primary: 'hsl(var(--sidebar-primary))',
+          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+          accent: 'hsl(var(--sidebar-accent))',
+          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+          border: 'hsl(var(--sidebar-border))',
+          ring: 'hsl(var(--sidebar-ring))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
+        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+        spark: { '0%': { opacity: '0', transform: 'scale(0) rotate(0deg)' }, '50%': { opacity: '1' }, '100%': { opacity: '0', transform: 'scale(1.5) rotate(180deg)' } },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        shimmer: 'shimmer 3s linear infinite',
+        float: 'float 4s ease-in-out infinite',
+        spark: 'spark 1.5s ease-in-out infinite',
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+  safelist: ['bg-navy-900', 'bg-fire-500', 'text-fire-500', 'border-fire-500'],
+};
+
+src/pages/Home.jsx:
+
+import HeroSection from '@/components/home/HeroSection';
+import AboutSection from '@/components/home/AboutSection';
+import ServicesSection from '@/components/home/ServicesSection';
+import CertificationsSection from '@/components/home/CertificationsSection';
+import WhyUsSection from '@/components/home/WhyUsSection';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
+import ContactSection from '@/components/home/ContactSection';
+
+export default function Home() {
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <CertificationsSection />
+      <WhyUsSection />
+      <TestimonialsSection />
+      <ContactSection />
+    </>
+  );
+}
+
+src/pages/ServiceDetail.jsx:
+
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { CheckCircle, ArrowRight, ChevronRight, MessageCircle, SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search, Phone } from 'lucide-react';
+import { SERVICES, SITE } from '@/lib/siteData';
+import ContactForm from '@/components/ContactForm';
+
+const ICON_MAP = { SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search };
+
+export default function ServiceDetail() {
+  const { slug } = useParams();
+  const service = SERVICES.find((s) => s.slug === slug);
+  const otherServices = SERVICES.filter((s) => s.slug !== slug).slice(0, 4);
+
+  if (!service) {
+    return (
+      <div className="pt-32 min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="font-display text-3xl font-bold text-navy-900 mb-4">Service introuvable</p>
+          <Link to="/#services" className="text-fire-500 hover:underline">Retour aux services</Link>
+        </div>
+      </div>
+    );
+  }
+
+  const Icon = ICON_MAP[service.icon] || SearchCheck;
+  const msg = encodeURIComponent(`Bonjour, je souhaite des informations sur le service : ${service.title}`);
+
+  return (
+    <>
+      {/* Hero */}
+      <div className="relative bg-navy-900 pt-20 min-h-[70vh] flex items-center overflow-hidden">
+        {/* BG image */}
+        {service.heroImage && (
+          <div className="absolute inset-0">
+            <img src={service.heroImage} alt={service.title} className="w-full h-full object-cover opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-900/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent" />
+          </div>
+        )}
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          {/* Breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 text-sm text-white/40 mb-8"
+          >
+            <Link to="/" className="hover:text-fire-400 transition-colors">Accueil</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link to="/#services" className="hover:text-fire-400 transition-colors">Services</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-white/70">{service.title}</span>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+            <div className="flex items-center gap-5 mb-8">
+              <div className="w-16 h-16 bg-fire-500 rounded-2xl flex items-center justify-center shadow-xl shadow-fire-500/30">
+                <Icon className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <span className="text-fire-400 text-sm font-semibold uppercase tracking-wider">{service.tagline}</span>
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  {service.title}
+                </h1>
+              </div>
+            </div>
+
+            <p className="text-white/70 text-xl max-w-2xl leading-relaxed">
+              {service.shortDesc}
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                to="/contact"
+                className="flex items-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl shadow-fire-500/25 transition-all"
+              >
+                Demander un devis <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a
+                href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold rounded-xl transition-all"
+              >
+                <MessageCircle className="w-5 h-5 fill-white" />
+                WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main content */}
+            <div className="lg:col-span-2">
+              {/* Description */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <h2 className="font-display text-3xl font-bold text-navy-900 mb-6">Description du service</h2>
+                {service.fullDesc.split('\n\n').map((para, i) => (
+                  <p key={i} className="text-steel-600 leading-relaxed mb-4 text-base">{para}</p>
+                ))}
+              </motion.div>
+
+              {/* Process */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-12"
+              >
+                <h2 className="font-display text-3xl font-bold text-navy-900 mb-8">Notre démarche</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {service.process.map((step, i) => (
+                    <div key={step.step} className="flex gap-5 bg-[#f5f7fa] rounded-2xl p-6 border border-steel-200">
+                      <div className="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center flex-shrink-0 text-fire-400 font-bold font-display text-xl">
+                        {step.step}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-navy-900 mb-1">{step.label}</h4>
+                        <p className="text-steel-500 text-sm leading-relaxed">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Benefits */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-12"
+              >
+                <h2 className="font-display text-3xl font-bold text-navy-900 mb-6">Bénéfices pour votre entreprise</h2>
+                <div className="space-y-3">
+                  {service.benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3 p-4 rounded-xl bg-fire-500/5 border border-fire-500/15">
+                      <CheckCircle className="w-5 h-5 text-fire-500 flex-shrink-0 mt-0.5" />
+                      <p className="text-navy-900 font-medium">{benefit}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Industries */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-12"
+              >
+                <h2 className="font-display text-3xl font-bold text-navy-900 mb-6">Secteurs concernés</h2>
+                <div className="flex flex-wrap gap-3">
+                  {service.industries.map((ind) => (
+                    <span key={ind} className="px-4 py-2 bg-navy-900 text-white text-sm font-medium rounded-xl">
+                      {ind}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Quick CTA */}
+              <div className="bg-navy-900 rounded-2xl p-6 sticky top-24">
+                <h3 className="font-display text-xl font-bold text-white mb-2">Besoin de ce service ?</h3>
+                <p className="text-white/50 text-sm mb-6">Contactez-nous pour un devis personnalisé et gratuit.</p>
+
+                <div className="space-y-3">
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] hover:bg-[#1fb855] text-white font-bold rounded-xl transition-all"
+                  >
+                    <MessageCircle className="w-5 h-5 fill-white" /> WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${SITE.phone}`}
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all border border-white/20"
+                  >
+                    <Phone className="w-4 h-4" /> {SITE.phone}
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl transition-all"
+                  >
+                    Formulaire de contact
+                  </Link>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="text-white/40 text-xs text-center">Réponse sous 24h ouvrées • Devis gratuit</p>
+                </div>
+              </div>
+
+              {/* Other services */}
+              <div>
+                <h3 className="font-display text-lg font-bold text-navy-900 mb-4">Autres services</h3>
+                <div className="space-y-3">
+                  {otherServices.map((s) => {
+                    const OtherIcon = ICON_MAP[s.icon] || SearchCheck;
+                    return (
+                      <Link
+                        key={s.slug}
+                        to={`/services/${s.slug}`}
+                        className="flex items-center gap-3 p-4 bg-[#f5f7fa] rounded-xl border border-steel-200 hover:border-fire-500/50 hover:bg-fire-500/5 transition-all group"
+                      >
+                        <div className="w-9 h-9 bg-navy-900 group-hover:bg-fire-500 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                          <OtherIcon className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-navy-900 font-medium text-sm group-hover:text-fire-600 transition-colors">{s.title}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="bg-[#f5f7fa] py-20 border-t border-steel-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-4xl font-bold text-navy-900 mb-4">
+            Prêt à démarrer votre projet ?
+          </h2>
+          <p className="text-steel-500 text-lg mb-10">
+            Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis gratuit.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl transition-all"
+            >
+              Demander un devis gratuit <ArrowRight className="w-5 h-5" />
+            </Link>
+            <a
+              href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold rounded-xl transition-all"
+            >
+              <MessageCircle className="w-5 h-5 fill-white" /> Contacter via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+src/pages/Contact.jsx:
+
+import { motion } from 'framer-motion';
+import { MessageCircle, Phone, Mail, MapPin, Clock, Linkedin, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import ContactForm from '@/components/ContactForm';
+import { SITE } from '@/lib/siteData';
+
+export default function Contact() {
+  const msg = encodeURIComponent("Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.");
+
+  return (
+    <>
+      {/* Page Header */}
+      <div className="bg-navy-900 pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-fire-500/30 to-transparent" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+            <span className="inline-block px-4 py-1.5 bg-fire-500/15 text-fire-400 text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
+              Contactez-nous
+            </span>
+            <h1 className="font-display text-5xl sm:text-6xl font-bold text-white mb-4">
+              Parlons de votre <span className="text-gradient-fire">projet</span>
+            </h1>
+            <p className="text-white/60 text-xl max-w-2xl">
+              Audit, certification, assistance technique ou formation — discutons ensemble de la meilleure solution pour votre entreprise.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="py-20 bg-[#f5f7fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            {/* Left — Contact info */}
+            <div className="lg:col-span-2">
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+                <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">
+                  Informations de contact
+                </h2>
+
+                {/* Contact cards */}
+                <div className="space-y-4 mb-8">
+                  {[
+                    { icon: Phone, title: 'Téléphone', val: SITE.phone, href: `tel:${SITE.phone}`, color: 'bg-blue-100 text-blue-700' },
+                    { icon: Mail, title: 'Email', val: SITE.email, href: `mailto:${SITE.email}`, color: 'bg-green-100 text-green-700' },
+                    { icon: MapPin, title: 'Localisation', val: SITE.location, href: null, color: 'bg-orange-100 text-orange-700' },
+                    { icon: Clock, title: 'Disponibilité', val: 'Lun–Ven: 8h–18h • Urgences 7j/7', href: null, color: 'bg-purple-100 text-purple-700' },
+                  ].map(({ icon: Icon, title, val, href, color }) => (
+                    <div key={title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel-200 shadow-sm">
+                      <div className={`w-11 h-11 ${color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-steel-400 uppercase tracking-wider mb-1">{title}</p>
+                        {href ? (
+                          <a href={href} className="text-navy-900 font-medium hover:text-fire-500 transition-colors text-sm">{val}</a>
+                        ) : (
+                          <p className="text-navy-900 font-medium text-sm">{val}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* WhatsApp Large Button */}
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 w-full px-6 py-5 bg-[#25D366] hover:bg-[#1fb855] text-white rounded-2xl shadow-xl shadow-[#25D366]/25 transition-all hover:-translate-y-0.5 mb-6"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-7 h-7 fill-white" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-lg leading-none">Contacter via WhatsApp</p>
+                    <p className="text-white/70 text-sm mt-1">Réponse rapide garantie</p>
+                  </div>
+                  <ArrowRight className="w-5 h-5 ml-auto" />
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 w-full px-6 py-4 bg-[#0A66C2] hover:bg-[#0856a8] text-white rounded-2xl transition-all font-semibold"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  Suivre sur LinkedIn
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Right — Form */}
+            <div className="lg:col-span-3">
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-steel-200"
+              >
+                <h2 className="font-display text-2xl font-bold text-navy-900 mb-2">
+                  Envoyez-nous un message
+                </h2>
+                <p className="text-steel-400 text-sm mb-8">
+                  Décrivez votre projet et nous vous répondrons sous 24h ouvrées.
+                </p>
+                <ContactForm />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Map-style location banner */}
+      <div className="bg-navy-900 py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="font-display text-3xl font-bold text-white mb-3">
+            Interventions France entière & International
+          </h3>
+          <p className="text-white/50 max-w-xl mx-auto">
+            Basé à Lyon, nous intervenons sur l'ensemble du territoire français et à l'international pour des missions de courte ou longue durée.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+src/components/home/AboutSection.jsx:
+
+import { motion } from 'framer-motion';
+import { CheckCircle, Award, Target } from 'lucide-react';
+import { SITE, IMAGES } from '@/lib/siteData';
+
+const values = [
+  { icon: '🎯', title: 'Excellence', desc: "Chaque mission est realisee avec le plus haut niveau d'exigence technique." },
+  { icon: '🛡️', title: 'Conformite', desc: "Maitrise complete des normes ISO, EN et codes internationaux." },
+  { icon: '⚡', title: 'Reactivite', desc: "Disponibilite et flexibilite pour repondre a vos urgences terrain." },
+  { icon: '🤝', title: 'Partenariat', desc: "Une relation de confiance durable avec nos clients industriels." },
+];
+
+const certifications = [
+  'IWE - Ingenieur International en Soudage',
+  'ISO 3834 - Lead Auditor Certifie',
+  'COFREND Niveau 3 - Controles Non Destructifs',
+  'EN 1090 - Expert en Construction Metallique',
+];
+
+const industries = [
+  'Construction metallique', 'Petrochimie', 'Energie & nucleaire',
+  'Naval & offshore', 'Aeronautique', 'Transport ferroviaire', 'Chaudronnerie',
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' } }),
+};
+
+export default function AboutSection() {
+  return (
+    <section id="apropos" className="py-24 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-1.5 bg-fire-500/10 text-fire-600 text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
+            A propos
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
+            Un expert a votre service
+          </h2>
+          <p className="text-steel-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            Ingenieur International en Soudage avec plus de {SITE.experience} ans d'experience dans les secteurs les plus exigeants de l'industrie.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0">
+              <img
+                src={IMAGES.expert}
+                alt={SITE.expertName + " - Expert soudure industrielle"}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="font-display text-white text-2xl font-bold">{SITE.expertName}</p>
+                <p className="text-fire-400">{SITE.title}</p>
+              </div>
+            </div>
+            <div className="absolute -bottom-6 -right-6 hidden lg:block bg-navy-900 rounded-2xl p-5 text-white shadow-xl">
+              <p className="font-display text-4xl font-bold text-fire-400">{SITE.experience}+</p>
+              <p className="text-white/60 text-sm mt-1">Annees d'expertise</p>
+            </div>
+          </motion.div>
+
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-steel-600 text-lg leading-relaxed mb-8"
+            >
+              Fort d'une experience acquise sur les chantiers les plus complexes d'Europe et du monde, je mets mon expertise technique au service de votre performance industrielle. Certifie IWE par l'Institut International de la Soudure, j'interviens comme consultant independant, coordinateur de soudage ou expert technique.
+            </motion.p>
+
+            <div className="mb-8">
+              <h3 className="font-display font-bold text-navy-900 text-xl mb-4 flex items-center gap-2">
+                <Award className="w-5 h-5 text-fire-500" />
+                Certifications
+              </h3>
+              <ul className="space-y-2">
+                {certifications.map((c, i) => (
+                  <motion.li
+                    key={c}
+                    custom={i}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="flex items-center gap-3 text-steel-700"
+                  >
+                    <CheckCircle className="w-5 h-5 text-fire-500 flex-shrink-0" />
+                    <span>{c}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-display font-bold text-navy-900 text-xl mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-fire-500" />
+                Secteurs d'intervention
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {industries.map((ind) => (
+                  <span key={ind} className="px-3 py-1.5 bg-steel-100 text-steel-700 text-sm rounded-lg border border-steel-200">
+                    {ind}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {values.map((v, i) => (
+            <motion.div
+              key={v.title}
+              custom={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-6 text-white hover:-translate-y-1 transition-transform duration-300"
+            >
+              <p className="text-4xl mb-4">{v.icon}</p>
+              <h4 className="font-display font-bold text-xl mb-2">{v.title}</h4>
+              <p className="text-white/60 text-sm leading-relaxed">{v.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+src/components/home/CertificationsSection:
+
+import { motion } from 'framer-motion';
+import { ShieldCheck } from 'lucide-react';
+
+const CERTS = [
+  {
+    title: "IWE — Ingénieur International en Soudage",
+    body: "Délivré par l'IIW (International Institute of Welding). Qualification la plus élevée en ingénierie de soudage reconnue dans 59 pays.",
+    org: "IIW — International Institute of Welding",
+    year: "2004",
+    color: "from-blue-900/80 to-navy-900/90",
+    accent: "border-blue-400/40",
+    tag: "IWE",
+    image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3f0965789_generated_image.png",
+  },
+  {
+    title: "ISO 3834 — Lead Auditor Certifié",
+    body: "Qualification d'auditeur pour les exigences de qualité en soudage par fusion des matériaux métalliques selon la norme internationale ISO 3834.",
+    org: "Bureau Veritas Certification",
+    year: "2011",
+    color: "from-emerald-900/80 to-navy-900/90",
+    accent: "border-emerald-400/40",
+    tag: "ISO",
+    image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/5bcffd6aa_generated_image.png",
+  },
+  {
+    title: "COFREND — Niveau 3 Contrôles Non Destructifs",
+    body: "Certification COFREND Niveau 3 en contrôles non destructifs (CND). Habilitation à définir, valider et superviser les méthodes d'inspection industrielle.",
+    org: "COFREND — Comité Français pour les END",
+    year: "2008",
+    color: "from-amber-900/70 to-navy-900/90",
+    accent: "border-amber-400/40",
+    tag: "CND N3",
+    image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/0ad203eb9_generated_image.png",
+  },
+  {
+    title: "EN 1090 — Expert Construction Métallique",
+    body: "Maîtrise complète de la norme européenne EN 1090 régissant l'exécution des structures en acier et en aluminium pour le marquage CE.",
+    org: "CETIM — Centre Technique Industriel",
+    year: "2015",
+    color: "from-purple-900/80 to-navy-900/90",
+    accent: "border-purple-400/40",
+    tag: "EN 1090",
+    image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3a2230813_generated_image.png",
+  },
+];
+
+export default function CertificationsSection() {
+  return (
+    <section id="certifications" className="py-24 lg:py-32 bg-[#080f1e] relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-fire-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-fire-500/10 text-fire-500 text-xs font-semibold rounded-full mb-5 uppercase tracking-widest border border-fire-500/20">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            Certifications &amp; Qualifications
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+            Une expertise reconnue<br />à l&apos;international
+          </h2>
+          <p className="text-white/40 text-lg max-w-xl mx-auto">
+            Des qualifications obtenues auprès des organismes les plus exigeants du secteur industriel mondial.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {CERTS.map((cert, i) => (
+            <motion.div
+              key={cert.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className={`group relative overflow-hidden rounded-2xl border ${cert.accent} bg-gradient-to-br ${cert.color} backdrop-blur-sm hover:-translate-y-1 transition-all duration-300`}
+            >
+              <div className="flex gap-0">
+                <div className="w-36 flex-shrink-0 relative overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy-900/80" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="px-2.5 py-1 bg-fire-500 text-white text-xs font-bold rounded-lg tracking-wider">
+                      {cert.tag}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex-1 p-6">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="font-display text-base font-bold text-white leading-tight">
+                      {cert.title}
+                    </h3>
+                    <span className="flex-shrink-0 text-xs text-white/30 bg-white/5 px-2 py-1 rounded-lg border border-white/10">
+                      {cert.year}
+                    </span>
+                  </div>
+                  <p className="text-white/50 text-sm leading-relaxed mb-4">
+                    {cert.body}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-white/30">
+                    <ShieldCheck className="w-3.5 h-3.5 text-fire-500/60" />
+                    {cert.org}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-6 pt-10 border-t border-white/5"
+        >
+          {["IIW Member", "ISO 3834", "COFREND", "EN 1090", "ASME", "API 1104"].map((badge) => (
+            <span key={badge} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white/40 text-xs font-medium tracking-wider">
+              {badge}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+src/components/ContactSection:
+
+import { motion } from 'framer-motion';
+import { MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import ContactForm from '../ContactForm';
+import { SITE } from '@/lib/siteData';
+
+export default function ContactSection() {
+  const msg = encodeURIComponent("Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.");
+
+  return (
+    <section id="contact" className="py-24 lg:py-32 bg-navy-900 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
+        <div className="w-full h-full bg-gradient-to-l from-fire-500 to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left — Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 bg-fire-500/15 text-fire-400 text-sm font-semibold rounded-full mb-6 uppercase tracking-wider">
+              Contact
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-6">
+              Parlons de votre projet
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-10">
+              Besoin d'un audit, d'une certification ou d'une assistance technique ? Contactez-nous pour une analyse gratuite de votre situation.
+            </p>
+
+            {/* Contact info */}
+            <div className="space-y-5 mb-10">
+              {[
+                { icon: Phone, val: SITE.phone, href: `tel:${SITE.phone}` },
+                { icon: Mail, val: SITE.email, href: `mailto:${SITE.email}` },
+                { icon: MapPin, val: SITE.location, href: null },
+              ].map(({ icon: Icon, val, href }) => (
+                <div key={val} className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-fire-500/15 border border-fire-500/25 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5 text-fire-400" />
+                  </div>
+                  {href ? (
+                    <a href={href} className="text-white/70 hover:text-fire-400 transition-colors">{val}</a>
+                  ) : (
+                    <span className="text-white/70">{val}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* WhatsApp CTA */}
+            <a
+              href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1fb855] text-white font-bold text-lg rounded-2xl shadow-xl shadow-[#25D366]/25 transition-all hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-6 h-6 fill-white" />
+              Contacter via WhatsApp
+            </a>
+          </motion.div>
+
+          {/* Right — Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white/5 border border-white/10 rounded-3xl p-8"
+          >
+            <h3 className="font-display text-2xl font-bold text-white mb-2">Envoyez-nous un message</h3>
+            <p className="text-white/40 text-sm mb-8">Réponse garantie sous 24h ouvrées</p>
+            <ContactForm dark />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+src/components/home/HeroSection:
+
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ChevronDown, Award, Star, ShieldCheck } from 'lucide-react';
+import { SITE, IMAGES } from '@/lib/siteData';
+
+export default function HeroSection() {
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050d1a]">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={IMAGES.hero}
+          alt="Atelier de soudage industriel"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/85 to-[#050d1a]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
+      </div>
+
+      {/* Decorative sparks */}
+      <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-fire-500 opacity-70 animate-ping" style={{ animationDuration: '2.5s' }} />
+      <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 rounded-full bg-fire-400 opacity-50 animate-ping" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }} />
+      <div className="absolute bottom-1/3 right-1/5 w-2.5 h-2.5 rounded-full bg-fire-300 opacity-30 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6">
+            Expert en<br />
+            <span className="text-gradient-fire">Soudure</span>{' '}
+            <span className="text-white">Industrielle</span>{' '}
+            <span className="text-white/40">&</span>{' '}
+            <span className="text-white">Consultant</span>
+          </h1>
+
+          <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+            Plus de <span className="text-white font-semibold">{SITE.experience} ans d'expérience</span> au service de la performance, de la qualité et de la conformité industrielle.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 mb-12">
+            <button
+              onClick={scrollToServices}
+              className="flex items-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl shadow-fire-500/25 hover:shadow-fire-500/40 transition-all text-base"
+            >
+              Découvrir mes services
+              <ArrowRight className="w-5 h-5" />
+            </button>
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl transition-all text-base"
+            >
+              Me contacter
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap gap-8">
+            {[
+              { val: `${SITE.experience}+`, label: 'Années d\'expérience', iconEl: <Award className="w-5 h-5 text-fire-400" /> },
+              { val: 'ISO 3834', label: 'Lead Auditor', iconEl: <ShieldCheck className="w-5 h-5 text-fire-400" /> },
+              { val: '200+', label: 'Missions réalisées', iconEl: <Star className="w-5 h-5 text-fire-400" /> },
+            ].map(({ iconEl, val, label }) => (
+              <div key={label} className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-fire-500/15 border border-fire-500/25 rounded-xl flex items-center justify-center">
+                  {iconEl}
+                </div>
+                <div>
+                  <p className="font-display font-bold text-white text-xl leading-none">{val}</p>
+                  <p className="text-white/40 text-xs mt-0.5">{label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Expert photo */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
+          className="hidden lg:flex justify-center items-end relative"
+        >
+          <div className="relative">
+            {/* Glow */}
+            <div className="absolute -inset-4 bg-fire-500/20 rounded-3xl blur-2xl" />
+            <div className="relative w-[380px] h-[480px] rounded-3xl overflow-hidden border-2 border-fire-500/20">
+              <img
+                src={IMAGES.expert}
+                alt={`${SITE.expertName} - Expert en soudure industrielle`}
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a]/80 via-transparent to-transparent" />
+              {/* Name card */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="font-display text-white text-xl font-bold">{SITE.expertName}</p>
+                <p className="text-fire-400 text-sm">{SITE.title}</p>
+              </div>
+            </div>
+
+            {/* Floating cert badge */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+              className="absolute -right-6 top-8 bg-white rounded-2xl shadow-2xl px-5 py-4 border border-gray-100"
+            >
+              <p className="text-navy-900 font-bold text-lg leading-none">IWE</p>
+              <p className="text-gray-500 text-xs mt-1">Certifié IIW</p>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        onClick={scrollToServices}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+      >
+        <span className="text-xs tracking-widest uppercase">Découvrir</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <ChevronDown className="w-5 h-5" />
+        </motion.div>
+      </motion.button>
+    </section>
+  );
+}
+
+src/components/ServicesSection:
+
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search } from 'lucide-react';
+import { SERVICES, IMAGES } from '@/lib/siteData';
+
+const ICON_MAP = { SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search };
+
+const SERVICE_BG = {
+  'audit-inspection': IMAGES.audit,
+  'coordination-soudage': IMAGES.chantier,
+  'dmos-qmos': IMAGES.dmos,
+  'assistance-chantier': IMAGES.chantier,
+  'formation-soudage': IMAGES.formation,
+  'controle-qualite': IMAGES.audit,
+  'expertise-defauts': IMAGES.expertise,
+};
+
+export default function ServicesSection() {
+  return (
+    <section id="services" className="py-24 lg:py-32 bg-[#060d1c]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <span className="inline-block px-4 py-1.5 bg-fire-500/10 text-fire-500 text-xs font-semibold rounded-full mb-4 uppercase tracking-widest border border-fire-500/20">
+            Expertise & Services
+          </span>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Nos domaines<br />d'intervention
+            </h2>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-white/50 hover:text-fire-400 text-sm font-medium transition-colors"
+            >
+              Besoin d'un service sur mesure ? <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Services grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {SERVICES.map((service, i) => {
+            const Icon = ICON_MAP[service.icon] || SearchCheck;
+            const bg = SERVICE_BG[service.slug] || IMAGES.chantier;
+            return (
+              <motion.div
+                key={service.slug}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07, duration: 0.5 }}
+                className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+              >
+                {/* Background image */}
+                <img
+                  src={bg}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Gradient overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060d1c] via-[#060d1c]/60 to-transparent" />
+                <div className="absolute inset-0 bg-navy-900/30 group-hover:bg-navy-900/10 transition-colors duration-500" />
+
+                {/* Top icon */}
+                <div className="absolute top-5 left-5">
+                  <div className="w-11 h-11 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl flex items-center justify-center group-hover:bg-fire-500/80 group-hover:border-fire-500 transition-all duration-300">
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+
+                {/* Top right tag */}
+                <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="px-3 py-1 bg-fire-500 text-white text-xs font-semibold rounded-full">
+                    {service.tagline}
+                  </span>
+                </div>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-display text-xl font-bold text-white mb-2 leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-2 max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
+                    {service.shortDesc}
+                  </p>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-2 text-fire-400 font-semibold text-sm group-hover:gap-3 transition-all"
+                  >
+                    En savoir plus <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+src/components/home/TestimonialsSection.jsx:
+
+import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    text: 'Jean-Pierre est intervenu en tant que coordinateur soudage sur notre site de Fos-sur-Mer. Son expertise technique et sa rigueur ont été déterminantes pour l\'obtention de notre certification ISO 3834 en moins de 6 mois.',
+    author: 'Directeur Qualité',
+    company: 'Industrie Pétrolière, Bouches-du-Rhône',
+  },
+  {
+    text: 'Grâce à l\'audit réalisé par JP Martin, nous avons identifié et corrigé des non-conformités critiques avant notre audit client. Son rapport d\'audit est le plus complet que nous ayons jamais reçu.',
+    author: 'Responsable Production',
+    company: 'Construction Métallique, Normandie',
+  },
+  {
+    text: 'Les formations dispensées par Jean-Pierre ont transformé notre équipe. Nos soudeurs ont non seulement amélioré leurs compétences techniques mais aussi leur compréhension des exigences normatives.',
+    author: 'Chef d\'Atelier',
+    company: 'Chaudronnerie Industrielle, Rhône-Alpes',
+  },
+];
+
+export default function TestimonialsSection() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block px-4 py-1.5 bg-fire-500/10 text-fire-600 text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
+            Témoignages
+          </span>
+          <h2 className="font-display text-4xl font-bold text-navy-900 mb-4">
+            Ce que disent nos clients
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="relative bg-[#f5f7fa] rounded-2xl p-8 border border-steel-200"
+            >
+              <Quote className="w-10 h-10 text-fire-400/40 mb-4" />
+              <p className="text-steel-600 leading-relaxed mb-6 text-sm italic">"{t.text}"</p>
+              <div className="border-t border-steel-200 pt-4">
+                <p className="font-semibold text-navy-900 text-sm">{t.author}</p>
+                <p className="text-steel-400 text-xs">{t.company}</p>
+              </div>
+              <div className="flex gap-1 mt-3">
+                {[...Array(5)].map((_, j) => (
+                  <span key={j} className="text-fire-400 text-sm">★</span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+src/components/home/WhyUsSection.jsx:
+
+import { motion } from 'framer-motion';
+
+const items = [
+  { num: '25+', label: 'Ans d\'expérience', sub: 'En soudage industriel international' },
+  { num: '200+', label: 'Missions réalisées', sub: 'En France et à l\'étranger' },
+  { num: '15+', label: 'Secteurs couverts', sub: 'De l\'énergie à l\'aérospatial' },
+  { num: '100%', label: 'Certification clients', sub: 'Taux de succès aux audits ISO 3834' },
+];
+
+export default function WhyUsSection() {
+  return (
+    <section className="py-20 bg-navy-900 relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent" />
+        <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent" />
+        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-3">
+            Des chiffres qui parlent d'eux-mêmes
+          </h2>
+          <p className="text-white/50">Une expertise reconnue par les plus grands acteurs industriels</p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {items.map((item, i) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <p className="font-display text-4xl sm:text-5xl font-bold text-fire-400 mb-2">{item.num}</p>
+              <p className="text-white font-semibold mb-1">{item.label}</p>
+              <p className="text-white/40 text-xs">{item.sub}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+src/components/layout/Footer.jsx:
+
+import { Link } from 'react-router-dom';
+import { Flame, MapPin, Phone, Mail, Linkedin, ArrowRight } from 'lucide-react';
+import { SITE, SERVICES } from '@/lib/siteData';
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#050d1a] text-white">
+      {/* CTA Banner */}
+      <div className="bg-fire-500/10 border-y border-fire-500/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="font-display text-2xl font-bold">Pret a demarrer votre projet ?</p>
+            <p className="text-white/60 mt-1">Contactez-nous pour un devis gratuit et personnalise.</p>
+          </div>
+          <Link
+            to="/contact"
+            className="flex items-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-lg shadow-fire-500/20 transition-all whitespace-nowrap"
+          >
+            Nous contacter <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Main footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 bg-fire-500 rounded-xl flex items-center justify-center">
+                <Flame className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <p className="font-display text-xl font-bold">{SITE.expertName}</p>
+                <p className="text-xs text-white/40 uppercase tracking-widest">Expert Soudure IWE</p>
+              </div>
+            </Link>
+            <p className="text-white/50 text-sm leading-relaxed">
+              {SITE.experience}+ ans d'expertise en soudage industriel. Qualite, conformite et performance pour l'industrie.
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="font-semibold text-white mb-5 uppercase text-xs tracking-widest text-fire-400">Navigation</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'Accueil', to: '/' },
+                { label: 'A propos', to: '/#apropos' },
+                { label: 'Services', to: '/#services' },
+                { label: 'Contact', to: '/contact' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    className="text-white/50 hover:text-fire-400 transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-white mb-5 uppercase text-xs tracking-widest text-fire-400">Services</h4>
+            <ul className="space-y-3">
+              {SERVICES.slice(0, 5).map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to={"/services/" + s.slug}
+                    className="text-white/50 hover:text-fire-400 transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-white mb-5 uppercase text-xs tracking-widest text-fire-400">Contact</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-fire-400 mt-0.5 flex-shrink-0" />
+                <span className="text-white/50 text-sm">{SITE.location}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-fire-400 flex-shrink-0" />
+                <a href={"tel:" + SITE.phone} className="text-white/50 hover:text-fire-400 transition-colors text-sm">
+                  {SITE.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-fire-400 flex-shrink-0" />
+                <a href={"mailto:" + SITE.email} className="text-white/50 hover:text-fire-400 transition-colors text-sm break-all">
+                  {SITE.email}
+                </a>
+              </li>
+            </ul>
+            <div className="mt-6">
+              <a
+                href={SITE.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 rounded-lg border border-[#0A66C2]/30 text-white/70 hover:text-white transition-all text-sm"
+              >
+                <Linkedin className="w-4 h-4" /> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/30 text-xs">
+            &copy; {year} {SITE.expertName} - Expert en Soudure Industrielle. Tous droits reserves.
+          </p>
+          <p className="text-white/30 text-xs">
+            Consultant certifie IWE - ISO 3834 - EN 1090
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+src/components/layout/Layout.jsx:
+
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import WhatsAppFAB from '../WhatsAppFAB';
+
+export default function Layout() {
+  return (
+    <div className="flex flex-col min-h-screen bg-background">
+      <Navbar />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <Footer />
+      <WhatsAppFAB />
+    </div>
+  );
+}
+
+src/components/layout/Navbar.jsx:
+
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Flame } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { SITE } from '@/lib/siteData';
+
+const links = [
+  { label: 'Accueil', to: '/' },
+  { label: 'À propos', to: '/#apropos' },
+  { label: 'Services', to: '/#services' },
+  { label: 'Contact', to: '/contact' },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => { setOpen(false); }, [location.pathname]);
+
+  const handleClick = (to) => {
+    if (to.startsWith('/#')) {
+      const id = to.slice(2);
+      if (location.pathname === '/') {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = to;
+      }
+    }
+    setOpen(false);
+  };
+
+  const isHome = location.pathname === '/';
+
+  return (
+    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className={`w-full max-w-5xl transition-all duration-500 rounded-2xl border ${
+          scrolled || !isHome
+            ? 'bg-navy-900/80 backdrop-blur-xl border-white/10 shadow-2xl shadow-black/40'
+            : 'bg-white/5 backdrop-blur-md border-white/10'
+        }`}
+      >
+        <div className="flex items-center justify-between px-5 h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 bg-fire-500 rounded-xl flex items-center justify-center shadow-lg shadow-fire-500/40">
+              <Flame className="w-5 h-5 text-white" />
+            </div>
+            <span className="font-display text-white font-bold text-base leading-none tracking-tight">
+              {SITE.expertName}
+            </span>
+          </Link>
+
+          {/* Desktop nav — pill chips */}
+          <nav className="hidden md:flex items-center gap-1 bg-white/5 rounded-xl p-1 border border-white/10">
+            {links.map((l) =>
+              l.to.startsWith('/#') ? (
+                <button
+                  key={l.to}
+                  onClick={() => handleClick(l.to)}
+                  className="px-4 py-1.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all"
+                >
+                  {l.label}
+                </button>
+              ) : (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className={`px-4 py-1.5 text-sm font-medium rounded-lg transition-all ${
+                    location.pathname === l.to
+                      ? 'bg-fire-500/20 text-fire-400'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
+          </nav>
+
+          <div className="hidden md:block">
+            <Link
+              to="/contact"
+              className="px-5 py-2 bg-fire-500 hover:bg-fire-600 text-white text-sm font-semibold rounded-xl shadow-lg shadow-fire-500/30 transition-all"
+            >
+              Devis gratuit
+            </Link>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden p-2 text-white"
+            aria-label="Menu"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden border-t border-white/10 px-4 py-4 space-y-1"
+            >
+              {links.map((l) =>
+                l.to.startsWith('/#') ? (
+                  <button
+                    key={l.to}
+                    onClick={() => handleClick(l.to)}
+                    className="block w-full text-left px-4 py-2.5 text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all text-sm"
+                  >
+                    {l.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    className="block px-4 py-2.5 text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all text-sm"
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
+              <div className="pt-3 border-t border-white/10">
+                <Link
+                  to="/contact"
+                  className="block text-center px-6 py-3 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl transition-all text-sm"
+                >
+                  Devis gratuit
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </header>
+  );
+}
+
+src/components/ContactForm.jsx:
+
+import { useState } from 'react';
+import { Send, CheckCircle } from 'lucide-react';
+
+export default function ContactForm({ dark = false }) {
+  const [form, setForm] = useState({ nom: '', entreprise: '', email: '', telephone: '', message: '' });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSent(true);
+  };
+
+  const inputClass = `w-full rounded-xl px-4 py-3.5 text-sm outline-none transition-all border ${
+    dark
+      ? 'bg-white/10 border-white/20 text-white placeholder-white/40 focus:border-fire-400 focus:bg-white/15'
+      : 'bg-white border-steel-200 text-navy-900 placeholder-steel-400 focus:border-fire-400 focus:ring-2 focus:ring-fire-400/20'
+  }`;
+
+  const labelClass = `block text-xs font-semibold mb-2 uppercase tracking-wider ${dark ? 'text-white/60' : 'text-steel-500'}`;
+
+  if (sent) {
+    return (
+      <div className={`flex flex-col items-center justify-center py-16 text-center ${dark ? 'text-white' : ''}`}>
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+          <CheckCircle className="w-8 h-8 text-green-600" />
+        </div>
+        <h3 className={`font-display text-2xl font-bold mb-2 ${dark ? 'text-white' : 'text-navy-900'}`}>
+          Message envoyé !
+        </h3>
+        <p className={`${dark ? 'text-white/60' : 'text-steel-500'}`}>
+          Je vous répondrai dans les plus brefs délais.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label className={labelClass}>Nom & Prénom *</label>
+          <input
+            type="text"
+            required
+            placeholder="Jean Dupont"
+            value={form.nom}
+            onChange={(e) => setForm({ ...form, nom: e.target.value })}
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className={labelClass}>Entreprise</label>
+          <input
+            type="text"
+            placeholder="Nom de votre société"
+            value={form.entreprise}
+            onChange={(e) => setForm({ ...form, entreprise: e.target.value })}
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label className={labelClass}>Email professionnel *</label>
+          <input
+            type="email"
+            required
+            placeholder="jean@entreprise.fr"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className={labelClass}>Téléphone</label>
+          <input
+            type="tel"
+            placeholder="+33 6 00 00 00 00"
+            value={form.telephone}
+            onChange={(e) => setForm({ ...form, telephone: e.target.value })}
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className={labelClass}>Votre message *</label>
+        <textarea
+          required
+          rows={5}
+          placeholder="Décrivez votre besoin ou votre projet..."
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          className={`${inputClass} resize-none`}
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl shadow-fire-500/25 hover:shadow-fire-500/40 transition-all"
+      >
+        Envoyer mon message
+        <Send className="w-5 h-5" />
+      </button>
+
+      <p className={`text-xs text-center ${dark ? 'text-white/30' : 'text-steel-400'}`}>
+        Réponse garantie sous 24h ouvrées · Formulaire purement indicatif
+      </p>
+    </form>
+  );
+}
+
+src/components/WhatsAppFAB.jsx:
+
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X } from 'lucide-react';
+import { SITE } from '@/lib/siteData';
+
+export default function WhatsAppFAB() {
+  const [tooltip, setTooltip] = useState(true);
+  const msg = encodeURIComponent("Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.");
+  const url = `https://wa.me/${SITE.whatsapp}?text=${msg}`;
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
+      <AnimatePresence>
+        {tooltip && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 10 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.8, x: 10 }}
+            className="bg-white text-navy-900 text-sm font-medium px-4 py-2.5 rounded-2xl shadow-2xl max-w-[180px] leading-snug flex items-center gap-2"
+          >
+            <span>Discutons de votre projet 💬</span>
+            <button onClick={() => setTooltip(false)} className="text-gray-400 hover:text-gray-600 flex-shrink-0">
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ delay: 1.5, type: 'spring', stiffness: 200, damping: 15 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="w-16 h-16 bg-[#25D366] rounded-full shadow-2xl shadow-[#25D366]/40 flex items-center justify-center"
+        onClick={() => setTooltip(false)}
+      >
+        <MessageCircle className="w-7 h-7 text-white fill-white" />
+      </motion.a>
+    </div>
+  );
+}
