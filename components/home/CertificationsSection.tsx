@@ -5,43 +5,43 @@ import { ShieldCheck } from 'lucide-react';
 
 const CERTS = [
   {
-    title: "IWE — Ingénieur International en Soudage",
-    body: "Délivré par l'IIW (International Institute of Welding). Qualification la plus élevée en ingénierie de soudage reconnue dans 59 pays.",
+    title: "IWS — International Welding Specialist",
+    body: "Délivré par l'IIW (International Institute of Welding). Qualification reconnue internationalement en technologie et pratique du soudage.",
     org: "IIW — International Institute of Welding",
-    year: "2004",
+    year: "2006",
     color: "from-blue-900/80 to-navy-900/90",
     accent: "border-blue-400/40",
-    tag: "IWE",
+    tag: "IWS",
     image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3f0965789_generated_image.png",
   },
   {
-    title: "ISO 3834 — Lead Auditor Certifié",
-    body: "Qualification d'auditeur pour les exigences de qualité en soudage par fusion des matériaux métalliques selon la norme internationale ISO 3834.",
-    org: "Bureau Veritas Certification",
-    year: "2011",
+    title: "ISO 3834 — Assurance Qualité Soudage",
+    body: "Maîtrise des exigences de qualité en soudage par fusion des matériaux métalliques selon la norme internationale ISO 3834.",
+    org: "Certification internationale",
+    year: "2010",
     color: "from-emerald-900/80 to-navy-900/90",
     accent: "border-emerald-400/40",
-    tag: "ISO",
+    tag: "ISO 3834",
     image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/5bcffd6aa_generated_image.png",
   },
   {
-    title: "COFREND — Niveau 3 Contrôles Non Destructifs",
-    body: "Certification COFREND Niveau 3 en contrôles non destructifs (CND). Habilitation à définir, valider et superviser les méthodes d'inspection industrielle.",
-    org: "COFREND — Comité Français pour les END",
+    title: "ISO 14731 — Coordination en Soudage",
+    body: "Compétences en coordination des activités de soudage selon la norme ISO 14731. Supervision technique et gestion de la qualité.",
+    org: "Norme internationale ISO",
     year: "2008",
     color: "from-amber-900/70 to-navy-900/90",
     accent: "border-amber-400/40",
-    tag: "CND N3",
+    tag: "ISO 14731",
     image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/0ad203eb9_generated_image.png",
   },
   {
-    title: "EN 1090 — Expert Construction Métallique",
-    body: "Maîtrise complète de la norme européenne EN 1090 régissant l'exécution des structures en acier et en aluminium pour le marquage CE.",
-    org: "CETIM — Centre Technique Industriel",
-    year: "2015",
+    title: "Multi-Procédés — 111, 135, 136, 141",
+    body: "Expérience terrain approfondie sur les principaux procédés de soudage : électrode enrobée (111), MIG/MAG (135/136) et TIG (141).",
+    org: "Expérience opérationnelle certifiée",
+    year: "20+ ans",
     color: "from-purple-900/80 to-navy-900/90",
     accent: "border-purple-400/40",
-    tag: "EN 1090",
+    tag: "MULTI",
     image: "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3a2230813_generated_image.png",
   },
 ];
@@ -128,7 +128,7 @@ export default function CertificationsSection() {
           transition={{ delay: 0.4 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-6 pt-10 border-t border-white/5"
         >
-          {["IIW Member", "ISO 3834", "COFREND", "EN 1090", "ASME", "API 1104"].map((badge) => (
+          {["IIW Member", "ISO 3834", "ISO 14731", "ISO 9001", "Multi-Procédés"].map((badge) => (
             <span key={badge} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white/40 text-xs font-medium tracking-wider">
               {badge}
             </span>

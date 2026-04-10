@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-display text-xl font-bold">{SITE.expertName}</p>
-                <p className="text-xs text-white/40 uppercase tracking-widest">Expert Soudure IWE</p>
+                <p className="text-xs text-white/40 uppercase tracking-widest">{SITE.title}</p>
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed">
@@ -117,10 +117,10 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/30 text-xs">
-            &copy; {year} {SITE.expertName} - Expert en Soudure Industrielle. Tous droits reserves.
+            &copy; {year} {SITE.expertName} - {SITE.title}. Tous droits reserves.
           </p>
           <p className="text-white/30 text-xs">
-            Consultant certifie IWE - ISO 3834 - EN 1090
+            Consultant certifie IWS - ISO 3834 - ISO 14731
           </p>
         </div>
       </div>

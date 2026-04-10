@@ -58,7 +58,7 @@ export default function Navbar() {
             <div className="w-9 h-9 bg-fire-500 rounded-xl flex items-center justify-center shadow-lg shadow-fire-500/40">
               <Flame className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display text-white font-bold text-base leading-none tracking-tight">
+            <span className="font-display text-white font-bold text-sm leading-none tracking-tight">
               {SITE.expertName}
             </span>
           </Link>

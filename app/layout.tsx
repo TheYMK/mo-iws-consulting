@@ -5,9 +5,9 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 export const metadata: Metadata = {
-  title: "Jean-Pierre Martin - Expert en Soudure Industrielle | Consultant IWE",
+  title: "MO IWS CONSULTING - Expert en Soudage IWS | Coordination, Inspection & Assurance Qualité",
   description:
-    "Expert en soudure industrielle certifié IWE. Audit, coordination soudage, DMOS/QMOS, assistance chantier, formation et contrôle qualité. Interventions France & International.",
+    "Expert en soudage certifié IWS. Coordination soudage ISO 14731, inspection, assurance qualité ISO 3834, qualification procédés DMOS/QMOS. Interventions France & International.",
 };
 
 export default function RootLayout({

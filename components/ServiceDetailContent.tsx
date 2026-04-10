@@ -2,16 +2,16 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, ChevronRight, MessageCircle, SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search, Phone } from 'lucide-react';
+import { CheckCircle, ArrowRight, ChevronRight, MessageCircle, Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory, Phone } from 'lucide-react';
 import { SERVICES, SITE } from '@/lib/siteData';
 import type { Service } from '@/lib/siteData';
 import type { LucideIcon } from 'lucide-react';
 
-const ICON_MAP: Record<string, LucideIcon> = { SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search };
+const ICON_MAP: Record<string, LucideIcon> = { Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory };
 
 export default function ServiceDetailContent({ service }: { service: Service }) {
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4);
-  const Icon = ICON_MAP[service.icon] || SearchCheck;
+  const Icon = ICON_MAP[service.icon] || Wrench;
   const msg = encodeURIComponent(`Bonjour, je souhaite des informations sur le service : ${service.title}`);
 
   return (
@@ -180,7 +180,7 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
                 <h3 className="font-display text-lg font-bold text-navy-900 mb-4">Autres services</h3>
                 <div className="space-y-3">
                   {otherServices.map((s) => {
-                    const OtherIcon = ICON_MAP[s.icon] || SearchCheck;
+                    const OtherIcon = ICON_MAP[s.icon] || Wrench;
                     return (
                       <Link
                         key={s.slug}

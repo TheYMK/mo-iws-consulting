@@ -6,21 +6,26 @@ import { SITE, IMAGES } from '@/lib/siteData';
 
 const values = [
   { icon: '🎯', title: 'Excellence', desc: "Chaque mission est realisee avec le plus haut niveau d'exigence technique." },
-  { icon: '🛡️', title: 'Conformite', desc: "Maitrise complete des normes ISO, EN et codes internationaux." },
+  { icon: '🛡️', title: 'Conformite', desc: "Maitrise complete des normes ISO 14731, ISO 3834 et ISO 9001." },
   { icon: '⚡', title: 'Reactivite', desc: "Disponibilite et flexibilite pour repondre a vos urgences terrain." },
   { icon: '🤝', title: 'Partenariat', desc: "Une relation de confiance durable avec nos clients industriels." },
 ];
 
 const certifications = [
-  'IWE - Ingenieur International en Soudage',
-  'ISO 3834 - Lead Auditor Certifie',
-  'COFREND Niveau 3 - Controles Non Destructifs',
-  'EN 1090 - Expert en Construction Metallique',
+  'IWS – International Welding Specialist',
+  'Coordination soudage selon ISO 14731',
+  'Assurance qualite soudage ISO 3834',
+  'Connaissance des exigences ISO 9001',
+  'Experience terrain multi-procedes (111, 135, 136, 141)',
 ];
 
 const industries = [
-  'Construction metallique', 'Petrochimie', 'Energie & nucleaire',
-  'Naval & offshore', 'Aeronautique', 'Transport ferroviaire', 'Chaudronnerie',
+  'Energie (centrales thermiques, hydroelectriques)',
+  'Industrie lourde',
+  'Tuyauterie industrielle',
+  'Chaudronnerie & structures metalliques',
+  'Naval & maintenance marine',
+  'Projets internationaux',
 ];
 
 const fadeUp = {
@@ -46,7 +51,7 @@ export default function AboutSection() {
             Un expert a votre service
           </h2>
           <p className="text-steel-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Ingenieur International en Soudage avec plus de {SITE.experience} ans d&apos;experience dans les secteurs les plus exigeants de l&apos;industrie.
+            Une expertise terrain au service de la qualite et de la performance industrielle.
           </p>
         </motion.div>
 
@@ -60,13 +65,13 @@ export default function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0">
               <img
-                src={IMAGES.expert}
-                alt={SITE.expertName + " - Expert soudure industrielle"}
+                src="/me_bg.png"
+                alt={SITE.consultantName + " - " + SITE.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <p className="font-display text-white text-2xl font-bold">{SITE.expertName}</p>
+                <p className="font-display text-white text-2xl font-bold">{SITE.consultantName}</p>
                 <p className="text-fire-400">{SITE.title}</p>
               </div>
             </div>
@@ -77,19 +82,27 @@ export default function AboutSection() {
           </motion.div>
 
           <div>
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-steel-600 text-lg leading-relaxed mb-8"
+              className="text-steel-600 text-lg leading-relaxed mb-8 space-y-4"
             >
-              Fort d&apos;une experience acquise sur les chantiers les plus complexes d&apos;Europe et du monde, je mets mon expertise technique au service de votre performance industrielle. Certifie IWE par l&apos;Institut International de la Soudure, j&apos;interviens comme consultant independant, coordinateur de soudage ou expert technique.
-            </motion.p>
+              <p>
+                Je suis {SITE.consultantName}, consultant expert en soudage certifie IWS (International Welding Specialist).
+              </p>
+              <p>
+                Avec plus de {SITE.experience} ans d&apos;experience dans l&apos;industrie (energie, hydraulique, nucleaire, tuyauterie, chaudronnerie), j&apos;ai evolue du terrain vers des fonctions de supervision, coordination et assurance qualite.
+              </p>
+              <p>
+                Aujourd&apos;hui, j&apos;accompagne les entreprises dans la maitrise de leurs operations de soudage, en garantissant la qualite, la securite et la conformite aux exigences techniques et normatives.
+              </p>
+            </motion.div>
 
             <div className="mb-8">
               <h3 className="font-display font-bold text-navy-900 text-xl mb-4 flex items-center gap-2">
                 <Award className="w-5 h-5 text-fire-500" />
-                Certifications
+                Certifications &amp; qualifications
               </h3>
               <ul className="space-y-2">
                 {certifications.map((c, i) => (

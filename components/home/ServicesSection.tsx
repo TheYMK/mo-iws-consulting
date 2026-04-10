@@ -2,20 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search } from 'lucide-react';
+import { ArrowRight, Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory } from 'lucide-react';
 import { SERVICES, IMAGES } from '@/lib/siteData';
 import type { LucideIcon } from 'lucide-react';
 
-const ICON_MAP: Record<string, LucideIcon> = { SearchCheck, Users, FileText, HardHat, GraduationCap, ShieldCheck, Search };
+const ICON_MAP: Record<string, LucideIcon> = { Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory };
 
 const SERVICE_BG: Record<string, string> = {
-  'audit-inspection': IMAGES.audit,
   'coordination-soudage': IMAGES.chantier,
-  'dmos-qmos': IMAGES.dmos,
-  'assistance-chantier': IMAGES.chantier,
-  'formation-soudage': IMAGES.formation,
-  'controle-qualite': IMAGES.audit,
-  'expertise-defauts': IMAGES.expertise,
+  'inspection-controle': IMAGES.audit,
+  'assurance-qualite': IMAGES.expertise,
+  'qualification-procedes': IMAGES.dmos,
+  'supervision-travaux': IMAGES.chantier,
+  'suivi-fabrication': IMAGES.formation,
 };
 
 export default function ServicesSection() {
@@ -47,7 +46,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {SERVICES.map((service, i) => {
-            const Icon = ICON_MAP[service.icon] || SearchCheck;
+            const Icon = ICON_MAP[service.icon] || Wrench;
             const bg = SERVICE_BG[service.slug] || IMAGES.chantier;
             return (
               <motion.div

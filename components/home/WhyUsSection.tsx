@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 const items = [
-  { num: '25+', label: "Ans d'expérience", sub: 'En soudage industriel international' },
+  { num: '20+', label: "Ans d'expérience", sub: 'En soudage industriel international' },
   { num: '200+', label: 'Missions réalisées', sub: "En France et à l'étranger" },
-  { num: '15+', label: 'Secteurs couverts', sub: "De l'énergie à l'aérospatial" },
+  { num: '15+', label: 'Secteurs couverts', sub: "De l'énergie au naval" },
   { num: '100%', label: 'Certification clients', sub: 'Taux de succès aux audits ISO 3834' },
 ];
 

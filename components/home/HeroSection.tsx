@@ -32,16 +32,16 @@ export default function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6">
-            Expert en<br />
-            <span className="text-gradient-fire">Soudure</span>{' '}
-            <span className="text-white">Industrielle</span>{' '}
-            <span className="text-white/40">&amp;</span>{' '}
-            <span className="text-white">Consultant</span>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-6">
+            Expert en{' '}
+            <span className="text-gradient-fire">Soudage</span>{' '}
+            <span className="text-white">IWS</span>{' '}
+            <span className="text-white/40">–</span>{' '}
+            <span className="text-white">Coordination, Inspection &amp; Assurance Qualité</span>
           </h1>
 
           <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
-            Plus de <span className="text-white font-semibold">{SITE.experience} ans d&apos;expérience</span> au service de la performance, de la qualité et de la conformité industrielle.
+            Plus de <span className="text-white font-semibold">{SITE.experience} ans d&apos;expérience</span> dans la coordination, l&apos;inspection et l&apos;assurance qualité soudage — conformité ISO 14731, ISO 3834 et ISO 9001.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
@@ -63,7 +63,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-8">
             {[
               { val: `${SITE.experience}+`, label: "Années d'expérience", iconEl: <Award className="w-5 h-5 text-fire-400" /> },
-              { val: 'ISO 3834', label: 'Lead Auditor', iconEl: <ShieldCheck className="w-5 h-5 text-fire-400" /> },
+              { val: 'IWS', label: 'Certifié IIW', iconEl: <ShieldCheck className="w-5 h-5 text-fire-400" /> },
               { val: '200+', label: 'Missions réalisées', iconEl: <Star className="w-5 h-5 text-fire-400" /> },
             ].map(({ iconEl, val, label }) => (
               <div key={label} className="flex items-center gap-3">
@@ -89,13 +89,13 @@ export default function HeroSection() {
             <div className="absolute -inset-4 bg-fire-500/20 rounded-3xl blur-2xl" />
             <div className="relative w-[380px] h-[480px] rounded-3xl overflow-hidden border-2 border-fire-500/20">
               <img
-                src={IMAGES.expert}
-                alt={`${SITE.expertName} - Expert en soudure industrielle`}
+                src="/me_bg.png"
+                alt={`${SITE.consultantName} - ${SITE.title}`}
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a]/80 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="font-display text-white text-xl font-bold">{SITE.expertName}</p>
+                <p className="font-display text-white text-xl font-bold">{SITE.consultantName}</p>
                 <p className="text-fire-400 text-sm">{SITE.title}</p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function HeroSection() {
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
               className="absolute -right-6 top-8 bg-white rounded-2xl shadow-2xl px-5 py-4 border border-gray-100"
             >
-              <p className="text-navy-900 font-bold text-lg leading-none">IWE</p>
+              <p className="text-navy-900 font-bold text-lg leading-none">IWS</p>
               <p className="text-gray-500 text-xs mt-1">Certifié IIW</p>
             </motion.div>
           </div>
