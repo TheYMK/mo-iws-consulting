@@ -1,15 +1,35 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function ContactForm({ dark = false }: { dark?: boolean }) {
   const [form, setForm] = useState({ nom: '', entreprise: '', email: '', telephone: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Une erreur est survenue.");
+      }
+
+      setStatus('sent');
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : "Une erreur est survenue.");
+    }
   };
 
   const inputClass = `w-full rounded-xl px-4 py-3.5 text-sm outline-none transition-all border ${
@@ -20,7 +40,7 @@ export default function ContactForm({ dark = false }: { dark?: boolean }) {
 
   const labelClass = `block text-xs font-semibold mb-2 uppercase tracking-wider ${dark ? 'text-white/60' : 'text-steel-500'}`;
 
-  if (sent) {
+  if (status === 'sent') {
     return (
       <div className={`flex flex-col items-center justify-center py-16 text-center ${dark ? 'text-white' : ''}`}>
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
@@ -98,16 +118,33 @@ export default function ContactForm({ dark = false }: { dark?: boolean }) {
         />
       </div>
 
+      {status === 'error' && (
+        <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-sm">
+          <AlertCircle className="w-4 h-4 flex-shrink-0" />
+          {errorMsg}
+        </div>
+      )}
+
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl shadow-fire-500/25 hover:shadow-fire-500/40 transition-all"
+        disabled={status === 'sending'}
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-xl shadow-fire-500/25 hover:shadow-fire-500/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Envoyer mon message
-        <Send className="w-5 h-5" />
+        {status === 'sending' ? (
+          <>
+            Envoi en cours...
+            <Loader2 className="w-5 h-5 animate-spin" />
+          </>
+        ) : (
+          <>
+            Envoyer mon message
+            <Send className="w-5 h-5" />
+          </>
+        )}
       </button>
 
       <p className={`text-xs text-center ${dark ? 'text-white/30' : 'text-steel-400'}`}>
-        Réponse garantie sous 24h ouvrées · Formulaire purement indicatif
+        Réponse garantie sous 24h ouvrées
       </p>
     </form>
   );
