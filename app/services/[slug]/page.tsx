@@ -15,7 +15,7 @@ export async function generateMetadata(
   if (!service) return {};
 
   return {
-    title: `${service.title} - Jean-Pierre Martin | Expert Soudure`,
+    title: `${service.title} - MO IWS CONSULTING | Expert Soudage IWS`,
     description: service.shortDesc,
   };
 }

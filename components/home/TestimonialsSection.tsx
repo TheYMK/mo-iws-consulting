@@ -5,19 +5,19 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Jean-Pierre est intervenu en tant que coordinateur soudage sur notre site de Fos-sur-Mer. Son expertise technique et sa rigueur ont été déterminantes pour l'obtention de notre certification ISO 3834 en moins de 6 mois.",
+    text: "MO IWS CONSULTING est intervenu en tant que coordinateur soudage sur notre site. Son expertise technique et sa rigueur ont été déterminantes pour l'obtention de notre certification ISO 3834 en moins de 6 mois.",
     author: 'Directeur Qualité',
-    company: 'Industrie Pétrolière, Bouches-du-Rhône',
+    company: 'Industrie Énergétique',
   },
   {
-    text: "Grâce à l'audit réalisé par JP Martin, nous avons identifié et corrigé des non-conformités critiques avant notre audit client. Son rapport d'audit est le plus complet que nous ayons jamais reçu.",
+    text: "Grâce à l'audit réalisé par Madi Ousseni, nous avons identifié et corrigé des non-conformités critiques avant notre audit client. Son rapport d'audit est le plus complet que nous ayons jamais reçu.",
     author: 'Responsable Production',
-    company: 'Construction Métallique, Normandie',
+    company: 'Construction Métallique',
   },
   {
-    text: "Les formations dispensées par Jean-Pierre ont transformé notre équipe. Nos soudeurs ont non seulement amélioré leurs compétences techniques mais aussi leur compréhension des exigences normatives.",
+    text: "L'accompagnement de MO IWS CONSULTING a transformé notre équipe. Nos soudeurs ont non seulement amélioré leurs compétences techniques mais aussi leur compréhension des exigences normatives.",
     author: "Chef d'Atelier",
-    company: 'Chaudronnerie Industrielle, Rhône-Alpes',
+    company: 'Chaudronnerie Industrielle',
   },
 ];
 

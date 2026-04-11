@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactPageContent from '@/components/ContactPageContent';
 
 export const metadata: Metadata = {
-  title: 'Contact - Jean-Pierre Martin | Expert en Soudure Industrielle',
+  title: 'Contact - MO IWS CONSULTING | Expert en Soudage IWS',
   description:
-    "Contactez Jean-Pierre Martin pour vos besoins en audit, certification, coordination soudage, formation et assistance technique. Réponse sous 24h.",
+    "Contactez MO IWS CONSULTING pour vos besoins en coordination soudage, inspection, assurance qualité et qualification de procédés. Réponse sous 24h.",
 };
 
 export default function ContactPage() {

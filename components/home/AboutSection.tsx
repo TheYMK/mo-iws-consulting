@@ -5,25 +5,25 @@ import { CheckCircle, Award, Target } from 'lucide-react';
 import { SITE, IMAGES } from '@/lib/siteData';
 
 const values = [
-  { icon: '🎯', title: 'Excellence', desc: "Chaque mission est realisee avec le plus haut niveau d'exigence technique." },
-  { icon: '🛡️', title: 'Conformite', desc: "Maitrise complete des normes ISO 14731, ISO 3834 et ISO 9001." },
-  { icon: '⚡', title: 'Reactivite', desc: "Disponibilite et flexibilite pour repondre a vos urgences terrain." },
+  { icon: '🎯', title: 'Excellence', desc: "Chaque mission est réalisée avec le plus haut niveau d'exigence technique." },
+  { icon: '🛡️', title: 'Conformité', desc: "Maîtrise complète des normes ISO 14731, ISO 3834 et ISO 9001." },
+  { icon: '⚡', title: 'Réactivité', desc: "Disponibilité et flexibilité pour répondre à vos urgences terrain." },
   { icon: '🤝', title: 'Partenariat', desc: "Une relation de confiance durable avec nos clients industriels." },
 ];
 
 const certifications = [
   'IWS – International Welding Specialist',
   'Coordination soudage selon ISO 14731',
-  'Assurance qualite soudage ISO 3834',
+  'Assurance qualité soudage ISO 3834',
   'Connaissance des exigences ISO 9001',
-  'Experience terrain multi-procedes (111, 135, 136, 141)',
+  'Expérience terrain multi-procédés (111, 135, 136, 141)',
 ];
 
 const industries = [
-  'Energie (centrales thermiques, hydroelectriques)',
+  'Énergie (centrales thermiques, hydroélectriques)',
   'Industrie lourde',
   'Tuyauterie industrielle',
-  'Chaudronnerie & structures metalliques',
+  'Chaudronnerie & structures métalliques',
   'Naval & maintenance marine',
   'Projets internationaux',
 ];
@@ -45,13 +45,13 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-fire-500/10 text-fire-600 text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
-            A propos
+            À propos
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
-            Un expert a votre service
+            Un expert à votre service
           </h2>
           <p className="text-steel-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Une expertise terrain au service de la qualite et de la performance industrielle.
+            Une expertise terrain au service de la qualité et de la performance industrielle.
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ export default function AboutSection() {
             </div>
             <div className="absolute -bottom-6 -right-6 hidden lg:block bg-navy-900 rounded-2xl p-5 text-white shadow-xl">
               <p className="font-display text-4xl font-bold text-fire-400">{SITE.experience}+</p>
-              <p className="text-white/60 text-sm mt-1">Annees d&apos;expertise</p>
+              <p className="text-white/60 text-sm mt-1">Années d&apos;expertise</p>
             </div>
           </motion.div>
 
@@ -89,13 +89,13 @@ export default function AboutSection() {
               className="text-steel-600 text-lg leading-relaxed mb-8 space-y-4"
             >
               <p>
-                Je suis {SITE.consultantName}, consultant expert en soudage certifie IWS (International Welding Specialist).
+                Je suis {SITE.consultantName}, consultant expert en soudage certifié IWS (International Welding Specialist).
               </p>
               <p>
-                Avec plus de {SITE.experience} ans d&apos;experience dans l&apos;industrie (energie, hydraulique, nucleaire, tuyauterie, chaudronnerie), j&apos;ai evolue du terrain vers des fonctions de supervision, coordination et assurance qualite.
+                Avec plus de {SITE.experience} ans d&apos;expérience dans l&apos;industrie (énergie, hydraulique, nucléaire, tuyauterie, chaudronnerie), j&apos;ai évolué du terrain vers des fonctions de supervision, coordination et assurance qualité.
               </p>
               <p>
-                Aujourd&apos;hui, j&apos;accompagne les entreprises dans la maitrise de leurs operations de soudage, en garantissant la qualite, la securite et la conformite aux exigences techniques et normatives.
+                Aujourd&apos;hui, j&apos;accompagne les entreprises dans la maîtrise de leurs opérations de soudage, en garantissant la qualité, la sécurité et la conformité aux exigences techniques et normatives.
               </p>
             </motion.div>
 

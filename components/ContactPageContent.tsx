@@ -116,7 +116,7 @@ export default function ContactPageContent() {
             Interventions France entière &amp; International
           </h3>
           <p className="text-white/50 max-w-xl mx-auto">
-            Basé à Lyon, nous intervenons sur l&apos;ensemble du territoire français et à l&apos;international pour des missions de courte ou longue durée.
+            Basé à La Réunion, nous intervenons sur l&apos;ensemble du territoire français, dans l&apos;Océan Indien et à l&apos;international pour des missions de courte ou longue durée.
           </p>
         </div>
       </div>

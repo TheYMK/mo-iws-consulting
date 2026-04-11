@@ -13,10 +13,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl font-bold">
-              Pret a demarrer votre projet ?
+              Prêt à démarrer votre projet ?
             </p>
             <p className="text-white/60 mt-1">
-              Contactez-nous pour un devis gratuit et personnalise.
+              Contactez-nous pour un devis gratuit et personnalisé.
             </p>
           </div>
           <Link
@@ -40,7 +40,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/50 text-sm leading-relaxed">
               {SITE.experience}+ ans d&apos;expertise en soudage industriel.
-              Qualite, conformite et performance pour l&apos;industrie.
+              Qualité, conformité et performance pour l&apos;industrie.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Accueil", to: "/" },
-                { label: "A propos", to: "/#apropos" },
+                { label: "À propos", to: "/#apropos" },
                 { label: "Services", to: "/#services" },
                 { label: "Contact", to: "/contact" },
               ].map((item) => (
@@ -133,7 +133,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/30 text-xs">
             &copy; {year} {SITE.expertName} - {SITE.title}. Tous droits
-            reserves. By{" "}
+            réservés. By{" "}
             <a
               href="https://kaymkassai.com"
               target="_blank"
@@ -144,7 +144,7 @@ export default function Footer() {
             </a>
           </p>
           <p className="text-white/30 text-xs">
-            Consultant certifie IWS - ISO 3834 - ISO 14731
+            Consultant certifié IWS - ISO 3834 - ISO 14731
           </p>
         </div>
       </div>
