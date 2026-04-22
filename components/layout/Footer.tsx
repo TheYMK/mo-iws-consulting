@@ -16,14 +16,14 @@ export default function Footer() {
               Prêt à démarrer votre projet ?
             </p>
             <p className="text-white/60 mt-1">
-              Contactez-nous pour un devis gratuit et personnalisé.
+              Contactez-moi pour un devis gratuit et personnalisé.
             </p>
           </div>
           <Link
             href="/contact"
             className="flex items-center gap-2 px-8 py-4 bg-fire-500 hover:bg-fire-600 text-white font-semibold rounded-xl shadow-lg shadow-fire-500/20 transition-all whitespace-nowrap"
           >
-            Nous contacter <ArrowRight className="w-5 h-5" />
+            Me contacter <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

@@ -1,20 +1,35 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory } from 'lucide-react';
-import { SERVICES, IMAGES } from '@/lib/siteData';
-import type { LucideIcon } from 'lucide-react';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Wrench,
+  SearchCheck,
+  ShieldCheck,
+  FileText,
+  HardHat,
+  Factory,
+} from "lucide-react";
+import { SERVICES, IMAGES } from "@/lib/siteData";
+import type { LucideIcon } from "lucide-react";
 
-const ICON_MAP: Record<string, LucideIcon> = { Wrench, SearchCheck, ShieldCheck, FileText, HardHat, Factory };
+const ICON_MAP: Record<string, LucideIcon> = {
+  Wrench,
+  SearchCheck,
+  ShieldCheck,
+  FileText,
+  HardHat,
+  Factory,
+};
 
 const SERVICE_BG: Record<string, string> = {
-  'coordination-soudage': IMAGES.chantier,
-  'inspection-controle': IMAGES.audit,
-  'assurance-qualite': IMAGES.expertise,
-  'qualification-procedes': IMAGES.dmos,
-  'supervision-travaux': IMAGES.chantier,
-  'suivi-fabrication': IMAGES.formation,
+  "coordination-soudage": IMAGES.chantier,
+  "inspection-controle": IMAGES.audit,
+  "assurance-qualite": IMAGES.expertise,
+  "qualification-procedes": IMAGES.dmos,
+  "supervision-travaux": IMAGES.chantier,
+  "suivi-fabrication": IMAGES.formation,
 };
 
 export default function ServicesSection() {
@@ -33,13 +48,16 @@ export default function ServicesSection() {
           </span>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Nos domaines<br />d&apos;intervention
+              Mes domaines
+              <br />
+              d&apos;intervention
             </h2>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 text-white/50 hover:text-fire-400 text-sm font-medium transition-colors"
             >
-              Besoin d&apos;un service sur mesure ? <ArrowRight className="w-4 h-4" />
+              Besoin d&apos;un service sur mesure ?{" "}
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

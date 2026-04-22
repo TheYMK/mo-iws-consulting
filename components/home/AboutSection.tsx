@@ -1,36 +1,56 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { CheckCircle, Award, Target } from 'lucide-react';
-import { SITE, IMAGES } from '@/lib/siteData';
+import { motion } from "framer-motion";
+import { CheckCircle, Award, Target } from "lucide-react";
+import { SITE, IMAGES } from "@/lib/siteData";
 
 const values = [
-  { icon: '🎯', title: 'Excellence', desc: "Chaque mission est réalisée avec le plus haut niveau d'exigence technique." },
-  { icon: '🛡️', title: 'Conformité', desc: "Maîtrise complète des normes ISO 14731, ISO 3834 et ISO 9001." },
-  { icon: '⚡', title: 'Réactivité', desc: "Disponibilité et flexibilité pour répondre à vos urgences terrain." },
-  { icon: '🤝', title: 'Partenariat', desc: "Une relation de confiance durable avec nos clients industriels." },
+  {
+    icon: "🎯",
+    title: "Excellence",
+    desc: "Chaque mission est réalisée avec le plus haut niveau d'exigence technique.",
+  },
+  {
+    icon: "🛡️",
+    title: "Conformité",
+    desc: "Maîtrise complète des normes ISO 14731, ISO 3834 et ISO 9001.",
+  },
+  {
+    icon: "⚡",
+    title: "Réactivité",
+    desc: "Disponibilité et flexibilité pour répondre à vos urgences terrain.",
+  },
+  {
+    icon: "🤝",
+    title: "Partenariat",
+    desc: "Une relation de confiance durable avec mes clients industriels.",
+  },
 ];
 
 const certifications = [
-  'IWS – International Welding Specialist',
-  'Coordination soudage selon ISO 14731',
-  'Assurance qualité soudage ISO 3834',
-  'Connaissance des exigences ISO 9001',
-  'Expérience terrain multi-procédés (111, 135, 136, 141)',
+  "IWS – International Welding Specialist",
+  "Coordination soudage selon ISO 14731",
+  "Assurance qualité soudage ISO 3834",
+  "Connaissance des exigences ISO 9001",
+  "Expérience terrain multi-procédés (111, 135, 136, 141)",
 ];
 
 const industries = [
-  'Énergie (centrales thermiques, hydroélectriques)',
-  'Industrie lourde',
-  'Tuyauterie industrielle',
-  'Chaudronnerie & structures métalliques',
-  'Naval & maintenance marine',
-  'Projets internationaux',
+  "Énergie (centrales thermiques, hydroélectriques)",
+  "Industrie lourde",
+  "Tuyauterie industrielle",
+  "Chaudronnerie & structures métalliques",
+  "Naval & maintenance marine",
+  "Projets internationaux",
 ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' as const } }),
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
+  }),
 };
 
 export default function AboutSection() {
@@ -48,10 +68,11 @@ export default function AboutSection() {
             À propos
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
-            Un expert à votre service
+            Un expert IWS à votre service
           </h2>
           <p className="text-steel-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Une expertise terrain au service de la qualité et de la performance industrielle.
+            Une expertise terrain dédiée à la qualité, à la conformité et à la
+            performance de vos opérations de soudage industrielles.
           </p>
         </motion.div>
 
@@ -71,13 +92,19 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <p className="font-display text-white text-2xl font-bold">{SITE.consultantName}</p>
+                <p className="font-display text-white text-2xl font-bold">
+                  {SITE.consultantName}
+                </p>
                 <p className="text-fire-400">{SITE.title}</p>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 hidden lg:block bg-navy-900 rounded-2xl p-5 text-white shadow-xl">
-              <p className="font-display text-4xl font-bold text-fire-400">{SITE.experience}+</p>
-              <p className="text-white/60 text-sm mt-1">Années d&apos;expertise</p>
+              <p className="font-display text-4xl font-bold text-fire-400">
+                {SITE.experience}+
+              </p>
+              <p className="text-white/60 text-sm mt-1">
+                Années d&apos;expertise
+              </p>
             </div>
           </motion.div>
 
@@ -89,13 +116,20 @@ export default function AboutSection() {
               className="text-steel-600 text-lg leading-relaxed mb-8 space-y-4"
             >
               <p>
-                Je suis {SITE.consultantName}, consultant expert en soudage certifié IWS (International Welding Specialist).
+                Je suis {SITE.consultantName}, consultant expert en soudage
+                certifié IWS (International Welding Specialist).
               </p>
               <p>
-                Avec plus de {SITE.experience} ans d&apos;expérience dans l&apos;industrie (énergie, hydraulique, nucléaire, tuyauterie, chaudronnerie), j&apos;ai évolué du terrain vers des fonctions de supervision, coordination et assurance qualité.
+                Avec plus de {SITE.experience} ans d&apos;expérience dans
+                l&apos;industrie (énergie, hydraulique, nucléaire, tuyauterie,
+                chaudronnerie), j&apos;ai évolué du terrain vers des fonctions
+                de supervision, coordination et assurance qualité.
               </p>
               <p>
-                Aujourd&apos;hui, j&apos;accompagne les entreprises dans la maîtrise de leurs opérations de soudage, en garantissant la qualité, la sécurité et la conformité aux exigences techniques et normatives.
+                Aujourd&apos;hui, j&apos;accompagne les industriels dans la
+                coordination, l&apos;inspection et l&apos;assurance qualité de
+                leurs opérations de soudage. Avec une approche orientée
+                conformité, fiabilité et performance terrain.
               </p>
             </motion.div>
 
@@ -129,7 +163,10 @@ export default function AboutSection() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {industries.map((ind) => (
-                  <span key={ind} className="px-3 py-1.5 bg-steel-100 text-steel-700 text-sm rounded-lg border border-steel-200">
+                  <span
+                    key={ind}
+                    className="px-3 py-1.5 bg-steel-100 text-steel-700 text-sm rounded-lg border border-steel-200"
+                  >
                     {ind}
                   </span>
                 ))}

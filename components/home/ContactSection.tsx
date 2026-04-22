@@ -1,15 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
-import ContactForm from '@/components/ContactForm';
-import { SITE } from '@/lib/siteData';
+import { motion } from "framer-motion";
+import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
+import { SITE } from "@/lib/siteData";
 
 export default function ContactSection() {
-  const msg = encodeURIComponent("Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.");
+  const msg = encodeURIComponent(
+    "Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.",
+  );
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-navy-900 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 lg:py-32 bg-navy-900 relative overflow-hidden"
+    >
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <div className="w-full h-full bg-gradient-to-l from-fire-500 to-transparent" />
       </div>
@@ -28,7 +33,9 @@ export default function ContactSection() {
               Parlons de votre projet
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-10">
-              Besoin d&apos;un audit, d&apos;une certification ou d&apos;une assistance technique ? Contactez-nous pour une analyse gratuite de votre situation.
+              Besoin d&apos;un audit, d&apos;une certification ou d&apos;une
+              assistance technique ? Contactez moi pour une analyse gratuite de
+              votre situation.
             </p>
 
             <div className="space-y-5 mb-10">
@@ -42,7 +49,12 @@ export default function ContactSection() {
                     <Icon className="w-5 h-5 text-fire-400" />
                   </div>
                   {href ? (
-                    <a href={href} className="text-white/70 hover:text-fire-400 transition-colors">{val}</a>
+                    <a
+                      href={href}
+                      className="text-white/70 hover:text-fire-400 transition-colors"
+                    >
+                      {val}
+                    </a>
                   ) : (
                     <span className="text-white/70">{val}</span>
                   )}
@@ -67,8 +79,12 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="bg-white/5 border border-white/10 rounded-3xl p-8"
           >
-            <h3 className="font-display text-2xl font-bold text-white mb-2">Envoyez-nous un message</h3>
-            <p className="text-white/40 text-sm mb-8">Réponse garantie sous 24h ouvrées</p>
+            <h3 className="font-display text-2xl font-bold text-white mb-2">
+              Envoyez moi un message
+            </h3>
+            <p className="text-white/40 text-sm mb-8">
+              Réponse garantie sous 24h ouvrées
+            </p>
             <ContactForm dark />
           </motion.div>
         </div>

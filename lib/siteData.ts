@@ -4,7 +4,7 @@ export const SITE = {
   title: "Expert en Soudage IWS",
   subtitle: "Coordination, Inspection & Assurance Qualité",
   experience: 20,
-  phone: "+33 0666656443",
+  phone: "+33 6 66 65 64 43",
   whatsapp: "330666656443",
   email: "contact@mo-iws-consulting.com",
   location: "Saint Denis, La Réunion",
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
       "Prise en charge complète de la coordination des activités de soudage conformément à la norme ISO 14731.",
     heroImage: IMAGES.chantier,
     fullDesc:
-      "La coordination en soudage est une fonction essentielle pour garantir la maîtrise technique et la conformité de vos opérations. Conformément à la norme ISO 14731, nous assurons l'organisation complète des activités de soudage, de la planification à la validation finale.\n\nNotre intervention couvre la gestion des exigences techniques, l'interface entre production et qualité, ainsi que le suivi rigoureux de la conformité des travaux sur le terrain.",
+      "La coordination en soudage est une fonction essentielle pour garantir la maîtrise technique et la conformité de vos opérations. Conformément à la norme ISO 14731, j'assure l'organisation complète des activités de soudage, de la planification à la validation finale.\n\nMon intervention couvre la gestion des exigences techniques, l'interface entre production et qualité, ainsi que le suivi rigoureux de la conformité des travaux sur le terrain.",
     benefits: [
       "Organisation optimale des opérations de soudage",
       "Gestion complète des exigences techniques",
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
       "Réalisation d'inspections et de contrôles qualité sur les opérations de soudage.",
     heroImage: IMAGES.audit,
     fullDesc:
-      "L'inspection et le contrôle qualité sont indispensables pour garantir la fiabilité et la conformité de vos assemblages soudés. Nous intervenons directement sur vos sites pour vérifier la qualité des soudures, contrôler les paramètres de soudage et assurer le suivi des non-conformités.\n\nNotre approche rigoureuse permet d'identifier rapidement les écarts et de mettre en place les actions correctives nécessaires pour valider vos assemblages.",
+      "L'inspection et le contrôle qualité sont indispensables pour garantir la fiabilité et la conformité de vos assemblages soudés. J'interviens directement sur vos sites pour vérifier la qualité des soudures, contrôler les paramètres de soudage et assurer le suivi des non-conformités.\n\nMon approche rigoureuse permet d'identifier rapidement les écarts et de mettre en place les actions correctives nécessaires pour valider vos assemblages.",
     benefits: [
       "Vérification visuelle approfondie des soudures",
       "Contrôle précis des paramètres de soudage",
@@ -153,7 +153,7 @@ export const SERVICES: Service[] = [
     shortDesc: "Mise en place et suivi des systèmes qualité liés au soudage.",
     heroImage: IMAGES.expertise,
     fullDesc:
-      "L'assurance qualité en soudage est un levier essentiel pour sécuriser vos processus et répondre aux exigences de vos clients. Nous vous accompagnons dans la mise en place de systèmes qualité conformes à la norme ISO 3834, depuis l'audit initial jusqu'à l'amélioration continue.\n\nNotre expertise couvre l'évaluation des pratiques de soudage, la mise en place de procédures qualité adaptées à votre organisation et le suivi des indicateurs de performance.",
+      "L'assurance qualité en soudage est un levier essentiel pour sécuriser vos processus et répondre aux exigences de vos clients. Je vous accompagne dans la mise en place de systèmes qualité conformes à la norme ISO 3834, depuis l'audit initial jusqu'à l'amélioration continue.\n\nMon expertise couvre l'évaluation des pratiques de soudage, la mise en place de procédures qualité adaptées à votre organisation et le suivi des indicateurs de performance.",
     benefits: [
       "Audit de conformité ISO 3834 complet",
       "Évaluation objective des pratiques de soudage",
@@ -200,7 +200,7 @@ export const SERVICES: Service[] = [
       "Accompagnement dans la qualification des modes opératoires de soudage.",
     heroImage: IMAGES.dmos,
     fullDesc:
-      "La qualification des procédés de soudage est une étape incontournable pour garantir la reproductibilité et la fiabilité de vos assemblages. Nous vous accompagnons dans la rédaction et la validation des DMOS, le suivi des essais QMOS et la vérification de la conformité aux normes en vigueur.\n\nNotre objectif est de vous fournir des procédés validés, documentés et conformes, prêts à être déployés en production.",
+      "La qualification des procédés de soudage est une étape incontournable pour garantir la reproductibilité et la fiabilité de vos assemblages. Je vous accompagne dans la rédaction et la validation des DMOS, le suivi des essais QMOS et la vérification de la conformité aux normes en vigueur.\n\nMon objectif : vous fournir des procédés validés, documentés et conformes, prêts à être déployés en production.",
     benefits: [
       "Rédaction et validation DMOS conformes",
       "Suivi rigoureux des essais QMOS",
@@ -246,7 +246,7 @@ export const SERVICES: Service[] = [
     shortDesc: "Encadrement et suivi des équipes sur chantier.",
     heroImage: IMAGES.chantier,
     fullDesc:
-      "La supervision de travaux est essentielle pour assurer la bonne exécution des opérations de soudage sur chantier. Notre expert intervient directement auprès de vos équipes pour superviser les soudeurs, veiller au respect des procédures et gérer les aléas techniques.\n\nUn reporting structuré permet de suivre l'avancement et de garantir la qualité des travaux en temps réel.",
+      "La supervision de travaux est essentielle pour assurer la bonne exécution des opérations de soudage sur chantier. J'interviens directement auprès de vos équipes pour superviser les soudeurs, veiller au respect des procédures et gérer les aléas techniques.\n\nUn reporting structuré permet de suivre l'avancement et de garantir la qualité des travaux en temps réel.",
     benefits: [
       "Supervision directe des soudeurs sur site",
       "Respect strict des procédures établies",
@@ -292,7 +292,7 @@ export const SERVICES: Service[] = [
     shortDesc: "Suivi technique des projets et des sous-traitants.",
     heroImage: IMAGES.formation,
     fullDesc:
-      "Le suivi de fabrication et des fournisseurs est un maillon essentiel pour garantir la qualité de votre chaîne de production. Nous assurons le contrôle de fabrication, le suivi des sous-traitants, la vérification documentaire et la réception des travaux.\n\nNotre intervention permet de détecter les écarts au plus tôt et d'assurer la conformité des livrables à chaque étape du processus.",
+      "Le suivi de fabrication et des fournisseurs est un maillon essentiel pour garantir la qualité de votre chaîne de production. J'assure le contrôle de fabrication, le suivi des sous-traitants, la vérification documentaire et la réception des travaux.\n\nMon intervention permet de détecter les écarts au plus tôt et d'assurer la conformité des livrables à chaque étape du processus.",
     benefits: [
       "Contrôle de fabrication rigoureux",
       "Suivi efficace des fournisseurs et sous-traitants",

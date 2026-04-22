@@ -1,13 +1,23 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { MessageCircle, Phone, Mail, MapPin, Clock, Linkedin, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import ContactForm from '@/components/ContactForm';
-import { SITE } from '@/lib/siteData';
+import { motion } from "framer-motion";
+import {
+  MessageCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Linkedin,
+  ArrowRight,
+} from "lucide-react";
+import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
+import { SITE } from "@/lib/siteData";
 
 export default function ContactPageContent() {
-  const msg = encodeURIComponent("Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.");
+  const msg = encodeURIComponent(
+    "Bonjour, je souhaite obtenir des informations sur vos services d'expertise en soudage industriel.",
+  );
 
   return (
     <>
@@ -16,15 +26,20 @@ export default function ContactPageContent() {
           <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-fire-500/30 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
             <span className="inline-block px-4 py-1.5 bg-fire-500/15 text-fire-400 text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
-              Contactez-nous
+              Contactez moi
             </span>
             <h1 className="font-display text-5xl sm:text-6xl font-bold text-white mb-4">
-              Parlons de votre <span className="text-gradient-fire">projet</span>
+              Parlons de votre{" "}
+              <span className="text-gradient-fire">projet</span>
             </h1>
             <p className="text-white/60 text-xl max-w-2xl">
-              Audit, certification, assistance technique ou formation — discutons ensemble de la meilleure solution pour votre entreprise.
+              Audit, certification, assistance technique ou formation —
+              discutons ensemble de la meilleure solution pour votre entreprise.
             </p>
           </motion.div>
         </div>
@@ -34,28 +49,70 @@ export default function ContactPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2">
-              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
                 <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">
                   Informations de contact
                 </h2>
 
                 <div className="space-y-4 mb-8">
                   {[
-                    { icon: Phone, title: 'Téléphone', val: SITE.phone, href: `tel:${SITE.phone}`, color: 'bg-blue-100 text-blue-700' },
-                    { icon: Mail, title: 'Email', val: SITE.email, href: `mailto:${SITE.email}`, color: 'bg-green-100 text-green-700' },
-                    { icon: MapPin, title: 'Localisation', val: SITE.location, href: null, color: 'bg-orange-100 text-orange-700' },
-                    { icon: Clock, title: 'Disponibilité', val: '09:00–17:00 • Urgences 7j/7', href: null, color: 'bg-purple-100 text-purple-700' },
+                    {
+                      icon: Phone,
+                      title: "Téléphone",
+                      val: SITE.phone,
+                      href: `tel:${SITE.phone}`,
+                      color: "bg-blue-100 text-blue-700",
+                    },
+                    {
+                      icon: Mail,
+                      title: "Email",
+                      val: SITE.email,
+                      href: `mailto:${SITE.email}`,
+                      color: "bg-green-100 text-green-700",
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Localisation",
+                      val: SITE.location,
+                      href: null,
+                      color: "bg-orange-100 text-orange-700",
+                    },
+                    {
+                      icon: Clock,
+                      title: "Disponibilité",
+                      val: "09:00–17:00 • Urgences 7j/7",
+                      href: null,
+                      color: "bg-purple-100 text-purple-700",
+                    },
                   ].map(({ icon: Icon, title, val, href, color }) => (
-                    <div key={title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel-200 shadow-sm">
-                      <div className={`w-11 h-11 ${color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <div
+                      key={title}
+                      className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel-200 shadow-sm"
+                    >
+                      <div
+                        className={`w-11 h-11 ${color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                      >
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <p className="text-xs font-semibold text-steel-400 uppercase tracking-wider mb-1">{title}</p>
+                        <p className="text-xs font-semibold text-steel-400 uppercase tracking-wider mb-1">
+                          {title}
+                        </p>
                         {href ? (
-                          <a href={href} className="text-navy-900 font-medium hover:text-fire-500 transition-colors text-sm">{val}</a>
+                          <a
+                            href={href}
+                            className="text-navy-900 font-medium hover:text-fire-500 transition-colors text-sm"
+                          >
+                            {val}
+                          </a>
                         ) : (
-                          <p className="text-navy-900 font-medium text-sm">{val}</p>
+                          <p className="text-navy-900 font-medium text-sm">
+                            {val}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -72,8 +129,12 @@ export default function ContactPageContent() {
                     <MessageCircle className="w-7 h-7 fill-white" />
                   </div>
                   <div className="text-left">
-                    <p className="font-bold text-lg leading-none">Contacter via WhatsApp</p>
-                    <p className="text-white/70 text-sm mt-1">Réponse rapide garantie</p>
+                    <p className="font-bold text-lg leading-none">
+                      Contacter via WhatsApp
+                    </p>
+                    <p className="text-white/70 text-sm mt-1">
+                      Réponse rapide garantie
+                    </p>
                   </div>
                   <ArrowRight className="w-5 h-5 ml-auto" />
                 </a>
@@ -98,10 +159,10 @@ export default function ContactPageContent() {
                 className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-steel-200"
               >
                 <h2 className="font-display text-2xl font-bold text-navy-900 mb-2">
-                  Envoyez-nous un message
+                  Envoyez moi un message
                 </h2>
                 <p className="text-steel-400 text-sm mb-8">
-                  Décrivez votre projet et nous vous répondrons sous 24h ouvrées.
+                  Décrivez votre projet et je vous réponds sous 24h ouvrées.
                 </p>
                 <ContactForm />
               </motion.div>
@@ -116,7 +177,9 @@ export default function ContactPageContent() {
             Interventions France entière &amp; International
           </h3>
           <p className="text-white/50 max-w-xl mx-auto">
-            Basé à La Réunion, nous intervenons sur l&apos;ensemble du territoire français, dans l&apos;Océan Indien et à l&apos;international pour des missions de courte ou longue durée.
+            Basé à La Réunion, j&apos;interviens sur l&apos;ensemble du
+            territoire français, dans l&apos;Océan Indien et à
+            l&apos;international pour des missions de courte ou longue durée.
           </p>
         </div>
       </div>
