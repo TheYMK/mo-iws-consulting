@@ -2,8 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import CertificationsSection from "@/components/home/CertificationsSection";
-import WhyUsSection from "@/components/home/WhyUsSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
 import ContactSection from "@/components/home/ContactSection";
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <CertificationsSection />
-      {/* <WhyUsSection /> */}
+      <ExperienceSection />
       <ContactSection />
     </>
   );
