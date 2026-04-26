@@ -16,7 +16,7 @@ const CERTS = [
       "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3f0965789_generated_image.png",
   },
   {
-    title: "ISO 3834 — Assurance Qualité Soudage",
+    title: "ISO 3834 — Assurance Qualité Soudage ",
     body: "Maîtrise des exigences de qualité en soudage par fusion des matériaux métalliques selon la norme internationale ISO 3834.",
     org: "Certification internationale",
     year: "2010",
