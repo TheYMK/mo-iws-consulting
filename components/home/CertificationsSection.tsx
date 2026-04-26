@@ -48,6 +48,39 @@ const CERTS = [
     image:
       "https://media.base44.com/images/public/69d538094c4f41d25d8d8a1f/3a2230813_generated_image.png",
   },
+  {
+    title: "CACES ® R485-2 — Gerbeur 2025",
+    body: "Certificat d'Aptitude à la Conduite En Sécurité : habilitation à la conduite de gerbeurs selon le référentiel R485, catégorie 2 (révision 2025).",
+    org: "CACES ® — manutention continue",
+    year: "2025",
+    color: "from-orange-900/75 to-navy-900/90",
+    accent: "border-orange-400/35",
+    tag: "R485-2",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    title: "CACES ® R489-3 — Gerbeur 2025",
+    body: "Certificat d'Aptitude à la Conduite En Sécurité : habilitation gerbeur selon le référentiel R489, catégorie 3 (révision 2025).",
+    org: "CACES ® — manutention continue",
+    year: "2025",
+    color: "from-sky-900/75 to-navy-900/90",
+    accent: "border-sky-400/35",
+    tag: "R489-3",
+    image:
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    title: "CACES ® R484-1 — Gerbeur 2025",
+    body: "Certificat d'Aptitude à la Conduite En Sécurité : habilitation gerbeur selon le référentiel R484, catégorie 1 (révision 2025).",
+    org: "CACES ® — manutention continue",
+    year: "2025",
+    color: "from-teal-900/75 to-navy-900/90",
+    accent: "border-teal-400/35",
+    tag: "R484-1",
+    image:
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=400&q=80",
+  },
 ];
 
 export default function CertificationsSection() {
@@ -143,6 +176,9 @@ export default function CertificationsSection() {
             "ISO 14731",
             "ISO 9001",
             "Multi-Procédés",
+            "CACES R485-2",
+            "CACES R489-3",
+            "CACES R484-1",
           ].map((badge) => (
             <span
               key={badge}
